@@ -1,0 +1,21 @@
+# Gradle / Android Studio
+.gradle/
+build/
+/local.properties
+/captures
+.externalNativeBuild/
+.cxx/
+*.iml
+.idea/
+.DS_Store
+
+# Signing secrets
+keystore.properties
+*.jks
+*.keystore
+
+# Generated artifacts
+/dist/
+
+# Local agent tooling output
+/agent-tools/
