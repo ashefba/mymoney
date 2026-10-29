@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Private budgeting, bills, savings goals and safe-to-spend. Works offline and keeps your data on your device." />
+    <meta name="theme-color" content="#08785b" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1613" media="(prefers-color-scheme: dark)" />
+    <title>MyMoney</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/icon-192.png" sizes="192x192" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">M</span><span>MyMoney</span></div>
+        <nav id="mainNav" class="main-nav" aria-label="Main navigation"></nav>
+        <div class="privacy-card">
+          <span class="privacy-symbol">⌁</span>
+          <div><strong>Private & offline</strong><small>Your data stays on this device</small></div>
+        </div>
+        <button class="profile" data-route="settings" type="button">
+          <span class="avatar">ME</span>
+          <span><strong>My finances</strong><small>Local profile</small></span>
+          <span>›</span>
+        </button>
+      </aside>
+      <div id="menuScrim" class="menu-scrim"></div>
+
+      <section class="workspace">
+        <header class="topbar">
+          <button id="menuToggle" class="icon-button menu-toggle" type="button" aria-label="Open menu">☰</button>
+          <div>
+            <p id="pageEyebrow" class="eyebrow">OVERVIEW</p>
+            <h1 id="pageTitle">Dashboard</h1>
+          </div>
+          <div class="top-actions">
+            <button id="themeToggle" class="icon-button" type="button" aria-label="Switch to dark mode"></button>
+            <button id="addButton" class="add-button" type="button" aria-label="Add transaction"><span class="plus-icon" aria-hidden="true"></span><span class="add-label">Add transaction</span></button>
+          </div>
+        </header>
+        <main id="content" class="content"></main>
+      </section>
+    </div>
+
+    <div id="modalBackdrop" class="modal-backdrop" hidden>
+      <section id="modal" class="modal" role="dialog" aria-modal="true"></section>
+    </div>
+    <div id="toast" class="toast" role="status"></div>
+    <input id="importFile" type="file" accept=".json,.mymoney" hidden />
+    <script src="./app.js"></script>
+  </body>
+</html>

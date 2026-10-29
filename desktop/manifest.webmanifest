@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "MyMoney — personal finance",
+  "short_name": "MyMoney",
+  "description": "Private budgeting, bills, savings goals and safe-to-spend. Works offline and keeps your data on your device.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f2f6f4",
+  "theme_color": "#08785b",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add transaction",
+      "short_name": "Add",
+      "url": "./?action=add",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

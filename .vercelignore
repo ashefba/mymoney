@@ -1,0 +1,13 @@
+/app
+/gradle
+/preview
+/.github
+/build.gradle.kts
+/settings.gradle.kts
+/gradle.properties
+/gradlew
+/gradlew.bat
+/desktop/*.cmd
+/desktop/*.ps1
+/desktop/README-Windows.txt
+/desktop/_headers
