@@ -21,7 +21,7 @@ Open `http://127.0.0.1:43261`. Add `?demo=1` to explore sample data without savi
 
 ### Publish it at a permanent link
 
-`vercel.json` serves `desktop/` as a static site, with no build step, and adds a strict Content Security Policy. The policy blocks every network request except to the app's own address. Deploy the repository root with Vercel (`vercel deploy --prod`, or import the repository in the Vercel dashboard).
+`vercel.json` serves `desktop/` as a static site and adds a strict Content Security Policy. Its only build step, `node scripts/generate-icons.mjs`, needs no dependencies and renders any missing PNG or ICO icons from the SVGs. The policy blocks every network request except to the app's own address. Deploy the repository root with Vercel (`vercel deploy --prod`, or import the repository in the Vercel dashboard).
 
 `desktop/` also works on any static host. `desktop/_headers` carries the same security headers for Netlify and Cloudflare Pages, so you can drag the `desktop/` folder (or the extracted `MyMoney-web` folder) onto [Netlify Drop](https://app.netlify.com/drop) to get a link without a build. Keep using the same link afterwards: each browser stores your data for that address only.
 
@@ -107,7 +107,7 @@ keyPassword=...
 
 A GitHub Actions workflow (`.github/workflows/android.yml`) runs the tests and uploads both APKs as build artifacts on every push, if you host the repo on GitHub.
 
-The PNG and ICO icons and `gradle-wrapper.jar` are binary, so they go missing if the repo is filled through the GitHub API or website. `.github/workflows/restore-binaries.yml` regenerates any that are absent, from `desktop/assets/*.svg` and the Gradle version pinned in `gradle-wrapper.properties`, and commits them. Run it from the **Actions** tab if you ever need it again.
+The PNG and ICO icons and `gradle-wrapper.jar` are binary, so they go missing if the repo is filled through the GitHub API or website. Vercel renders missing icons on every deployment. `.github/workflows/restore-binaries.yml` commits them to the repo too, and regenerates `gradle-wrapper.jar` from the Gradle version pinned in `gradle-wrapper.properties`. Run it from the **Actions** tab if you ever need it again.
 
 ## Install the APK on your phone
 
